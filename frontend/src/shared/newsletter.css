@@ -1,0 +1,112 @@
+.slider-container1 {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.slider-background1 {
+    position: absolute;
+    top: 0; 
+    left: 0;  
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+    z-index: 0;
+    filter: blur(2px);
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-text1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.active-card {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-container1 {
+    width: 80%;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
+    margin-top: 20px;
+    position: relative;
+    width: 60%;
+}
+
+.card1 {
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card1:hover {
+    transform: scale(1.05);
+}
+
+.card-title1 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+body.dark-theme .slider-btn
+{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.left1 {
+    left: 10px;
+}
+
+.right1 {
+    right: 10px;
+}

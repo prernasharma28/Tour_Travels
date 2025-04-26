@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    margin-bottom: 50px;
+}
+
+.popup {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    max-width: 700px;
+    background-color: #FAFAFA;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 350px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+.popup-content {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.popup-image-container {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.popup-image {
+    width: 105%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.popup-text {
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.popup-text h3 {
+    text-align: center;
+    font-family: Cinzel, "Palatino Linotype", serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-shadow: 2px 2px 5px #333;
+    line-height: 2.8rem;
+    letter-spacing: 0.05em;
+    color: rgb(59, 58, 54);
+    margin-bottom: 15px;
+}
+
+body.dark-theme .popup-text h3
+{
+    color: rgb(59, 58, 54);
+}
+
+.popup-text p {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.MuiBox-root.css-1q79099 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.MuiBox-root.css-zttbi5 {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.MuiBox-root.css-0 {
+    margin-bottom: 8px;
+}
+
+.MuiBox-root.css-zttbi5 img {
+    margin-bottom: 8px;
+    width: 45px;
+    height: 32px;
+}
+
+.MuiTypography-root.MuiTypography-body-xxs.css-9w7qol {
+    font-size: 0.85rem;
+    color: rgb(59, 58, 54);
+    text-align: center;
+}
+
+.enroll-button {
+    margin-bottom: 10px;
+    margin-top: 15px;
+    background-color: #e79508;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    display: block;
+}
+
+body.dark-theme .enroll-button
+{
+    background-color: #e79508;
+}
+
+.enroll-button:hover {
+    background-color: #f2a829;
+}
+
+@media (max-width: 768px) {
+    .popup {
+        flex-direction: column;
+        width: 85%;
+        height: auto;
+    }
+
+    .popup-image-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .popup-text {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .popup-text h3 {
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+    }
+
+    .popup-text p {
+        font-size: 0.9rem;
+    }
+
+    .enroll-button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}

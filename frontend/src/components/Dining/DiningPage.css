@@ -1,0 +1,403 @@
+/* General Styles */
+.dining-page {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    /* Light background for better contrast */
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    /* Full viewport height */
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent overlay for readability */
+    padding: 20px;
+    top: 30%;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-overlay p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Culinary Legacy (Bottom of Image) */
+.culinary-legacy {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    text-align: center;
+
+    padding: 10px 20px;
+    border-radius: 30px;
+
+}
+
+.culinary-legacy h2 {
+    font-size: 3.4rem;
+    color: #fff;
+    margin: 0;
+    font-weight: bold;
+    font-family: Cinzel, Palatino Linotype, sans;
+
+}
+
+/* Dining Options */
+.dining-options {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #fff;
+    /* White background for better contrast */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
+
+.dining-options h2 {
+    font-size: 2.5rem;
+    font-family: Italic;
+    margin-bottom: 30px;
+
+}
+
+.dining-options p {
+    font-family: Inter, sans-serif;
+    font-size: 1.23vw;
+    line-height: 1.5;
+    color: #666;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* Increased gap between cards */
+    flex-wrap: wrap;
+}
+
+.dining-card {
+    width: 400px;
+    /* Increased width for bigger cards */
+    height: 450px;
+    /* Increased height for bigger cards */
+    perspective: 1000px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+.dining-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-front {
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    /* Smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+}
+
+.card-back {
+    background-color: #d6d2d2;
+    color: #fff;
+    transform: rotateY(180deg);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-back h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card-back p {
+    font-size: 1.2rem;
+    padding: 0 10px;
+    line-height: 1.5;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.dining-card:hover .card-front {
+    transform: scale(1.05);
+    /* Smooth scaling effect */
+}
+
+.dining-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    /* Add shadow on hover */
+}
+
+
+.toggle-description {
+    color: white;
+    /* Default color for the button */
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .hero-overlay p {
+        font-size: 1rem;
+    }
+
+    .culinary-legacy h2 {
+        font-size: 1.5rem;
+    }
+
+    .new-section h2 {
+        text-align: center;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dining-card {
+        width: 90%;
+        height: auto;
+        /* Let height adjust automatically */
+    }
+
+}
+
+.image-content-section {
+    margin: 1rem 0;
+    /* Reduce overall margin */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Smaller gap between sections */
+
+}
+
+.section-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Reduced gap between image and text */
+}
+
+.section-row.reverse {
+    flex-direction: row-reverse;
+
+}
+
+.section-image img {
+    max-width: 40%;
+    /* Smaller image size */
+    height: auto;
+    border-radius: 8px;
+}
+
+.section-content {
+    max-width: 50%;
+    /* Keep text width smaller */
+}
+
+.section-content h4 {
+    font-size: 1.2rem;
+    /* Smaller heading font size */
+    margin-bottom: 0.5rem;
+}
+
+.section-content p {
+    font-size: 0.9rem;
+    /* Reduced text size */
+    line-height: 1.4;
+    /* Slightly compact line spacing */
+    color: #555;
+}
+
+.new-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Additional Heading */
+.additional-heading {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 2.5rem;
+    color: #444;
+    font-family: Italic;
+}
+
+.additional-heading h2 {
+    /* font-weight: bold; */
+    font-size: 2.5rem;
+}
+
+
+/* Below Cards Section */
+.below-cards {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.below-card-item {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.below-card-item.left-align {
+    flex-direction: row;
+}
+
+.below-card-item.right-align {
+    flex-direction: row-reverse;
+}
+
+.below-card-image img {
+    width: 36.4583vw;
+    height: 25vw;
+    object-fit: cover;
+
+}
+
+.below-card-content {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.below-card-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-family: Italic;
+}
+
+.below-card-content p {
+    font-size: 1rem;
+    color: #666;
+}
+
+
+/* Search Section */
+.search-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.dropdown {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Three Image Section */
+.three-image-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.three-image-section h2 {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 2.9rem;
+    font-family: Italic;
+}
+
+
+.three-image-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.three-image-item {
+    text-align: center;
+}
+
+.three-image-item img {
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.three-image-item p {
+    margin-top: 10px;
+    font-size: 14px;
+}

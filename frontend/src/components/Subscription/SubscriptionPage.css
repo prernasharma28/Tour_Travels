@@ -1,0 +1,189 @@
+/* General styles for the subscription page */
+.enhanced-subscription-page1 {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light Mode */
+body:not(.dark-theme) .enhanced-subscription-page1 {
+    background-color: rgb(254, 252, 252);
+    color:  #242323;
+}
+
+/* Dark Mode */
+body.dark-theme .enhanced-subscription-page1 {
+    background-color:  #242323;
+    color: #ecf0f1;
+}
+
+/* Header */
+.header1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.heading1 {
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Toggle Button */
+.toggle-btn1 {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+/* Cards Container */
+.cards-container2 {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 10px;
+    align-items: stretch;
+}
+
+/* Card Styles */
+.card2 {
+    background-color: #fff;
+    color:  #242323;
+    width: 25%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+    max-height: 450px;
+}
+
+/* Dark Mode Card Styling */
+body.dark-theme .card2 {
+    background-color:  #242323;
+    color: #ecf0f1;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* On hover, scale up the card */
+.card2:hover {
+    transform: scale(1.05);
+}
+
+/* Card Header */
+.card-header2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-family: Cinzel, Palatino Linotype, serif;
+    text-transform: uppercase;
+}
+
+.card-title2 {
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+.card-price1 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Features List */
+.features-list1 {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.features-list1 li {
+    margin-bottom: 8px;
+}
+
+/* Subscribe Button */
+.subscribe-btn1 {
+    padding: 10px 20px;
+    background-color: #faa935;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    /* Remove underline */
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+.subscribe-btn1:hover {
+    background-color: #edab4e;
+}
+
+/* Dark Mode Button */
+body.dark-theme .subscribe-btn1 {
+    background-color: #f39c12;
+    color:  #242323;
+}
+
+body.dark-theme .subscribe-btn1:hover {
+    background-color: #d4890e;
+}
+
+/* Static Card Themes */
+.basic-theme {
+    color:  #242323;
+}
+
+.vip-theme {
+    color:  #242323;
+}
+
+.premium-theme {
+    color:  #242323;
+}
+
+/* Dark Mode for Static Themes */
+body.dark-theme .basic-theme,
+body.dark-theme .vip-theme,
+body.dark-theme .premium-theme {
+    color: #ecf0f1;
+}
+
+.icon1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Align features list */
+.features-list1 {
+    text-align: center;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+/* Card Body */
+.card-body2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centers the content vertically */
+    align-items: center;
+    flex-grow: 1;
+}

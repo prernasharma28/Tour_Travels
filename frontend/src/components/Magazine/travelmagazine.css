@@ -1,0 +1,219 @@
+/* Flex Container for Card */
+.group-card5 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 80%;
+    height: 70%;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Flex Container for Left and Right Sections */
+.card-header5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Left Section (Title) */
+.title-stack5 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-stack5 h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.title-divider5 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.divider5 {
+    margin: 0;
+    flex-shrink: 0;
+    border-width: 0;
+    border-style: solid;
+    border-color: black;
+    border-bottom-width: 1px;
+    height: 0%;
+    width: 40px;
+    background: #151515;
+}
+
+.title5 {
+    margin: 0;
+    font-family: Cinzel, Palatino Linotype, serif;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 3.23vw;
+    line-height: 3.85vw;
+    color: #45443F;
+}
+
+/* Right Section (Content) */
+.subtitle-container5 {
+    font-family: Inter, sans-serif;
+    color: #45443F;
+    font-weight: 300;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.subtitle5 {
+    font-size: 1.23vw;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.more-link-container5 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.more-link5 a {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #FAA935;
+    text-decoration: none;
+}
+
+.more-link5 a:hover {
+    color: #FAA935;
+}
+
+.more-link5 svg {
+    width: 16px;
+    height: 16px;
+    fill: #FAA935;
+}
+
+/* Card Body */
+.card-body5 {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 70px;
+    margin-top: 30px;
+}
+
+/* Latest Issue Section */
+.latest-issue5 {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 100px;
+}
+
+.issue-title5{
+    font-family: Cinzel, "Palatino Linotype", sans;
+    color: rgb(69, 68, 63);
+    font-weight: 200;
+    font-size: 1.9vw;
+    line-height: 3.5vw;
+    text-transform: uppercase;
+}
+
+.issue-description5 {
+    font-family: Inter, sans-serif;
+    color: #45443F;
+    font-weight: 300;
+    margin-bottom: 10px;
+    font-size: 1.0vw;
+}
+
+.issue-volume5 {
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #242424;
+    margin-top: 10px;
+}
+
+.read-button-container5 {
+    margin-top: 20px;
+    margin-right:20px;
+    display: flex;
+    gap:20px;
+}
+
+.read-button5 a {
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #FAA935;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.read-button5 a:hover {
+    background-color: #FAA935;
+}
+
+.read-button5 a:focus {
+    outline: none;
+    border: none;
+}
+
+.image-container5 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.magazine-image5 {
+    width: 450px;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-header5 {
+        flex-direction: column;
+    }
+
+    .card-body5 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .title-stack5 {
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .subtitle-container5 {
+        align-items: center;
+    }
+
+    .image-container5 {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
