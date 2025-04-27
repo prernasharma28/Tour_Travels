@@ -31,8 +31,15 @@ const AdminDashboard = () => {
   const [bookings, setBookings] = useState([]);
   const [currentPage, setCurrentPage] = useState('dashboard');
   const [loading, setLoading] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === 'dark');
+      document.body.classList.toggle('dark-theme', savedTheme === 'dark');
+    }
+
     const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
     setUsers(storedUsers);
 
@@ -58,6 +65,13 @@ const AdminDashboard = () => {
 
     fetchBookings();
   }, []);
+
+  const toggleTheme = () => {
+    const newTheme = !isDarkMode ? 'dark' : 'light';
+    setIsDarkMode(!isDarkMode);
+    localStorage.setItem('theme', newTheme);
+    document.body.classList.toggle('dark-theme', !isDarkMode);
+  };
 
   const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const today = new Date();
@@ -99,14 +113,10 @@ const AdminDashboard = () => {
     ],
   };
 
-  
   const monthlyLabels = [];
   const monthlyBookings = [];
-
-  // Get current date
   const currentDate = new Date();
 
-  // Initialize months and counts
   for (let i = 5; i >= 0; i--) {
     const d = new Date(currentDate.getFullYear(), currentDate.getMonth() - i, 1);
     const label = d.toLocaleString('default', { month: 'short' });
@@ -166,7 +176,7 @@ const AdminDashboard = () => {
     const rows = bookings.map((b, index) => {
       const date = new Date(b.createdAt);
       return [
-        index + 1, // S.No
+        index + 1,
         b.username,
         b.email,
         b.phone,
@@ -191,12 +201,26 @@ const AdminDashboard = () => {
     link.click();
   };
 
-
   return (
     <div className="admin-container">
+      <button
+        onClick={toggleTheme}
+        style={{
+          position: 'fixed',
+          top: '20px',
+          right: '30px',
+          backgroundColor: 'transparent',
+          border: 'none',
+          cursor: 'pointer',
+          zIndex: '1000',
+          fontSize: '24px',
+        }}
+      >
+        {isDarkMode ? '🌞' : '🌙'}
+      </button>
+
       <div className="admin-dashboard">
         <div className="sidebar">
-          <h2>Admin Dashboard</h2>
           <ul>
             <li onClick={() => setCurrentPage('dashboard')}>Dashboard</li>
             <li onClick={() => setCurrentPage('users')}>Users</li>
@@ -214,7 +238,7 @@ const AdminDashboard = () => {
             currentPage === 'dashboard' && (
               <div>
                 <div className="statistics">
-                  <div className="stat-cards"><h3>Total Users</h3><p>{users.length}</p></div>
+                    <div className="stat-cards"><h3>Total Users</h3><p>{users.length}</p></div>
                   <div className="stat-cards"><h3>Total Bookings</h3><p>{bookings.length}</p></div>
                 </div>
 
@@ -224,47 +248,47 @@ const AdminDashboard = () => {
                   <div className="chart-box"><h3>Monthly Trend</h3><Line data={lineData} /></div>
                 </div>
 
-                  <div className="recent-bookings">
-                    <h3>Recent Bookings</h3>
-                    {bookings.length === 0 ? (
-                      <p>No bookings available</p>
-                    ) : (
-                      <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
-                        <table>
-                          <thead>
-                            <tr>
-                              <th style={{ width: '60px' }}>S.No</th>
-                              <th>Username</th>
-                              <th>Email</th>
-                              <th>Phone</th>
-                              <th>Tour</th>
-                              <th>Guests</th>
-                              <th>From Date</th>
-                              <th>To Date</th>
-                              <th>Date & Time</th>
-                              <th>Payment ID</th>
+                <div className="recent-bookings">
+                  <h3>Recent Bookings</h3>
+                  {bookings.length === 0 ? (
+                    <p>No bookings available</p>
+                  ) : (
+                    <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th style={{ width: '60px' }}>S.No</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Tour</th>
+                            <th>Guests</th>
+                            <th>From Date</th>
+                            <th>To Date</th>
+                            <th>Date & Time</th>
+                            <th>Payment ID</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[...bookings].reverse().map((booking, index) => (
+                            <tr key={index}>
+                              <td style={{ textAlign: 'center' }}>{index + 1}</td>
+                              <td>{booking.username}</td>
+                              <td>{booking.email}</td>
+                              <td>{booking.phone}</td>
+                              <td>{booking.tourName}</td>
+                              <td>{booking.guestSize}</td>
+                              <td>{formatDate(booking.fromDate)}</td>
+                              <td>{formatDate(booking.toDate)}</td>
+                              <td>{formatDateTime(booking.createdAt)}</td>
+                              <td>{booking.razorpayPaymentId}</td>
                             </tr>
-                          </thead>
-                          <tbody>
-                            {[...bookings].reverse().map((booking, index) => (
-                              <tr key={index}>
-                                <td style={{ textAlign: 'center' }}>{index + 1}</td>
-                                <td>{booking.username}</td>
-                                <td>{booking.email}</td>
-                                <td>{booking.phone}</td>
-                                <td>{booking.tourName}</td>
-                                <td>{booking.guestSize}</td>
-                                <td>{formatDate(booking.fromDate)}</td>
-                                <td>{formatDate(booking.toDate)}</td>
-                                <td style={{ whiteSpace: 'pre-line' }}>{formatDateTime(booking.createdAt)}</td>
-                                <td>{booking.razorpayPaymentId}</td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    )}
-                  </div>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                </div>
               </div>
             )
           )}
