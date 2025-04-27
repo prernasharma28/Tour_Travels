@@ -10,7 +10,7 @@ import MasonaryImagesGallery from '../components/Image-gallery/MasonaryImagesGal
 import Testimonials from '../components/Testimonial/Testimonials';
 import Newsletter from '../shared/Newsletter';
 import chatbotIcon from '../assets/images/imageLogo.png';
-import heroVideo1 from '../assets/images/hero-video1.mp4';
+import heroVideo1 from '../assets/images/hero-video.mp4';
 import Popup from '../components/Pop-up/Popup';
 import TravelMagazine from '../components/Magazine/travelmagazine';
 import Ocassion from '../components/Talking/Ocassion';
