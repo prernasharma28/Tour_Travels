@@ -30,7 +30,7 @@ body {
 }
 
 .slider-image {
-  width: 130%;
+  width: 100%;
   height: auto;
   object-fit: cover;
 }
@@ -41,7 +41,7 @@ body {
 }
 
 .about-title {
-  margin-right: 20px;
+  margin-right: 50px;
   font-family: Inter, Cinzel, serif;
   font-size: 36px;
   color: #333;

@@ -7,6 +7,10 @@ import p2 from '../assets/images/AboutP2.png';
 import p3 from '../assets/images/AboutP3.png';
 import p4 from '../assets/images/AboutP4.png';
 import TajMagazine from "../components/Magazine/travelmagazine"; // ✅ Import Magazine Component
+import pic1 from '../assets/images/pic1.png';
+import pic2 from '../assets/images/pic2.avif';
+import pic3 from '../assets/images/pic3.avif';
+import pic4 from '../assets/images/pic4.avif';
 import Footer from "../components/Footer/Footer";
 
 const AboutUs = () => {
@@ -91,7 +95,7 @@ const AboutUs = () => {
           <img
             className="slider-image"
             alt="slider-img"
-            src="https://cdn.sanity.io/images/ocl5w36p/prod2/c76f3cb19d48bbacd7a83ce6006e5a345031b5d1-3840x1860.jpg?w=1280&fm=webp&dpr=2"
+            src={pic1}
           />
         </div>
       </div>
@@ -141,7 +145,7 @@ const AboutUs = () => {
              <img
               className="vision-img"
               alt="Explore the World"
-              src="https://cdn.sanity.io/images/ocl5w36p/prod2/6b7c0ba53b19ae0640c7442a3dd7c31411a1717e-700x574.png?w=1280&fm=webp&dpr=2"
+              src={pic3}
             />
           </div>
         </div>
@@ -165,7 +169,7 @@ const AboutUs = () => {
             className="MuiBox-root css-0"
             alt="Experience the Best"
             style={{ width: "80%", height: "600px", cursor: "pointer", marginLeft: "150px", borderRadius: "20px"}}
-            src="https://cdn.sanity.io/images/ocl5w36p/prod2/7581058065a372fc967151fa0ccaa82a6f0215cb-1440x640.png?w=1024&fm=webp&dpr=2"
+            src={pic2}
             onClick={() => {
               const videoUrl = "https://assets-cug1-825v2.tajhotels.com/video/tajness%20-%203min_17th%20Jan%2022.mp4?Impolicy=Medium_High";
               const videoElement = document.createElement("video");
@@ -293,7 +297,7 @@ const AboutUs = () => {
             <img
               className="paathya-image"
               alt="Our Vision for Travel"
-              src="https://cdn.sanity.io/images/ocl5w36p/prod2/87c0abbe1de30ebcd1418d77a39a14cb68779a54-2256x2396.png?w=1280&fm=webp&dpr=2"
+              src={pic4}
             />
           </div>
         </div>

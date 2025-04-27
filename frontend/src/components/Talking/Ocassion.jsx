@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import "./Ocassion.css";
 import Footer from '../Footer/Footer';
+import pic14 from '../../assets/images/p14.avif';
+import pic15 from '../../assets/images/p15.avif';
+import pic16 from '../../assets/images/p16.avif';
 
 const EventsAndConferences = () => {
     const styles = {
@@ -26,7 +29,7 @@ const EventsAndConferences = () => {
                     <div style={{ position: 'relative' }}>
                         <a href="/dining">
                             <img 
-                                src="https://cdn.sanity.io/images/ocl5w36p/prod2/6d34584a52ea8140cfca9cc30d693325abca5925-1400x1080.jpg?w=480&fm=webp&dpr=2"
+                                src={pic14}
                                 alt="Meetings & Conferences"
                                 style={{
                                     ...styles.image,
@@ -57,7 +60,7 @@ const EventsAndConferences = () => {
                     <div style={{ position: 'relative' }}>
                         <a href="/events">
                             <img 
-                                src="https://cdn.sanity.io/images/ocl5w36p/prod2/d451ef209272bc10c3665a819b4865034801d2a2-1400x1080.jpg?w=480&fm=webp&dpr=2"
+                                src={pic15}
                                 alt="Events"
                                 style={{
                                     ...styles.image,
@@ -90,7 +93,7 @@ const EventsAndConferences = () => {
                     <div style={{ position: 'relative' }}>
                         <a href="/destinations">
                             <img 
-                                src="https://cdn.sanity.io/images/ocl5w36p/prod2/8458083aed28ec653b7d55ebe021378a6fe40b17-1400x1080.jpg?w=480&fm=webp&dpr=2"
+                                src={pic16}
                                 alt="Timeless Weddings"
                                 style={{
                                     ...styles.image,
