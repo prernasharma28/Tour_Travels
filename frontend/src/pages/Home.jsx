@@ -59,7 +59,7 @@ const Home = () => {
           fontSize: '24px',
         }}
       >
-        {isDarkMode ? '🌞' : '🌙'}
+        {isDarkMode ? '' : '🌙'}
       </button>
 
 
