@@ -8,6 +8,10 @@
     animation: fadeIn 1.2s ease-in;
 }
 
+.dark-theme .thankyou-container {
+    background: linear-gradient(135deg, #1f1f2f, #2a1a3f, #3b1e2e);
+}
+
 .thankyou-card {
     background: white;
     border-radius: 1.5rem;
@@ -19,6 +23,12 @@
     border: 2px solid #e9d5ff;
     position: relative;
     overflow: hidden;
+}
+
+.dark-theme .thankyou-card {
+    background: #1e1e2e;
+    border: 2px solid #6b21a8;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .confetti-animation {
@@ -46,11 +56,20 @@
     text-shadow: 1px 1px 2px #e9d5ff;
 }
 
+.dark-theme .thankyou-title {
+    color: #c084fc;
+    text-shadow: 1px 1px 2px #4c1d95;
+}
+
 .thankyou-subtitle {
     font-size: 1.25rem;
     color: #4b5563;
     font-weight: 500;
     margin-bottom: 1rem;
+}
+
+.dark-theme .thankyou-subtitle {
+    color: #d1d5db;
 }
 
 .thankyou-info {
@@ -59,14 +78,26 @@
     margin-bottom: 0.5rem;
 }
 
+.dark-theme .thankyou-info {
+    color: #a3a3a3;
+}
+
 .thankyou-booking {
     font-size: 1rem;
     color: #9333ea;
     font-weight: 600;
 }
 
+.dark-theme .thankyou-booking {
+    color: #d8b4fe;
+}
+
 .booking-id {
     color: #6b21a8;
+}
+
+.dark-theme .booking-id {
+    color: #e9d5ff;
 }
 
 .thankyou-buttons {
@@ -109,12 +140,25 @@
     background: #faf5ff;
 }
 
+.dark-theme .secondary-button {
+    border-color: #c084fc;
+    color: #e9d5ff;
+}
+
+.dark-theme .secondary-button:hover {
+    background: #3f3f46;
+}
+
 .thankyou-footer {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
     font-size: 0.875rem;
     color: #9ca3af;
+}
+
+.dark-theme .thankyou-footer {
+    color: #a1a1aa;
 }
 
 @keyframes fadeIn {

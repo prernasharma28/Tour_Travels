@@ -6,18 +6,51 @@ const ThankYouPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [bookingId, setBookingId] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
+    // Set booking ID or fallback
     if (location.state?.bookingId) {
       setBookingId(location.state.bookingId);
     } else {
       const fallbackId = `TRVL-${Math.floor(10000 + Math.random() * 90000)}`;
       setBookingId(fallbackId);
     }
+
+    // Load theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === 'dark');
+      document.body.classList.toggle('dark-theme', savedTheme === 'dark');
+    }
   }, [location.state]);
+
+  const toggleTheme = () => {
+    const newTheme = isDarkMode ? "light" : "dark";
+    setIsDarkMode(!isDarkMode);
+    localStorage.setItem("theme", newTheme);
+    document.body.classList.toggle("dark-theme", !isDarkMode);
+  };
 
   return (
     <div className="thankyou-container">
+      {/* Theme Toggle Button */}
+      <button
+        onClick={toggleTheme}
+        style={{
+          position: "fixed",
+          top: "20px",
+          right: "30px",
+          backgroundColor: "transparent",
+          border: "none",
+          cursor: "pointer",
+          zIndex: "1000",
+          fontSize: "24px",
+        }}
+      >
+        {isDarkMode ? "🌞" : "🌙"}
+      </button>
+
       <div className="thankyou-card">
         <div className="confetti-animation">
           <iframe
@@ -32,7 +65,9 @@ const ThankYouPage = () => {
         <p className="thankyou-subtitle">
           Your journey is now confirmed. Get ready to explore new adventures!
         </p>
-        <p className="thankyou-info">We’ve sent the confirmation details to your email.</p>
+        <p className="thankyou-info">
+          We’ve sent the confirmation details to your email.
+        </p>
         <p className="thankyou-booking">
           Booking ID: <span className="booking-id">{bookingId}</span>
         </p>
